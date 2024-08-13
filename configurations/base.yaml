@@ -1,0 +1,10 @@
+application:
+  host:
+  port: 
+database:
+  host: 
+  port: 
+  database: 
+  username: 
+  password: 
+  ssl_enabled: false
