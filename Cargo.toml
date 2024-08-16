@@ -15,3 +15,4 @@ sqlx = { version = "0.8.0", features = [
 config = "0.14"
 serde = "1.0.206"
 serde-aux = "4.5.0"
+anyhow = "1.0.86"

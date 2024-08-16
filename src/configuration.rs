@@ -26,13 +26,13 @@ pub fn get_configuration() -> Result<Configuration, config::ConfigError> {
     settings.try_deserialize::<Configuration>()
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct Configuration {
     pub database: DatabaseConfiguration,
     pub application: ApplicationConfiguration,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct DatabaseConfiguration {
     host: String,
     #[serde(deserialize_with = "deserialize_number_from_string")]
@@ -59,10 +59,10 @@ impl DatabaseConfiguration {
             .ssl_mode(ssl_option)
     }
 }
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct ApplicationConfiguration {
-    host: String,
-    port: u16,
+    pub host: String,
+    pub port: u16,
 }
 
 enum Environment {
